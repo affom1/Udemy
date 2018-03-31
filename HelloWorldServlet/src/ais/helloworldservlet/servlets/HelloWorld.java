@@ -2,8 +2,6 @@ package ais.helloworldservlet.servlets;
 
 import java.io.*;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -13,17 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloWorldButWithTime
+ * Servlet implementation class HelloWorld
  */
-@WebServlet("/HelloWorldButWithTime")
-public class HelloWorldButWithTime extends HttpServlet {
+@WebServlet("/hiddenservlets/HelloWorld2.do")
+public class HelloWorld extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloWorldButWithTime() {
+    public HelloWorld() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,17 +30,17 @@ public class HelloWorldButWithTime extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		double sqrtvalue = Math.sqrt(1352.0);
-
+		
+		double sqrtvalue = Math.sqrt(4.0);
 		Date now = new Date();
 		String currentTime = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(now);
-
-
+		
+		System.out.println("Salami");
 		
 		out.println("<html><body><h1 align='center'>Hello World Servlet</h1>"
 				+ "<br>The square root of 1352 is: " + sqrtvalue + "<br>" 
 				+ "<br>Do you know what time it is? it is: " + currentTime + "<br>" 
-				 +  "</body></html>");
+				+ "</body></html>");
 	}
 
 	/**
@@ -51,7 +48,6 @@ public class HelloWorldButWithTime extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
